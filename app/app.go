@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/bayusm0506/hcf-or-gcd/app/controllers"
 	"github.com/bayusm0506/hcf-or-gcd/config"
 	"github.com/gorilla/mux"
 )
@@ -23,6 +24,7 @@ func (a *App) Initialize() {
 // SetRouters sets the all required routers
 func (a *App) setRouters() {
 	// Routing for handling
+	a.Post("/api/hcf", a.handleRequest(controllers.Hcf))
 }
 
 // Post wraps the routers for POST method
