@@ -23,7 +23,10 @@ cd /hcf-or-gcd
 │   └── config.go
 ├── go.mod
 ├── go.sum
+├── hcf-or-gcd
 ├── main.go
+├── main_test.go
+├── README.md
 ```
 
 ## Installation
@@ -34,6 +37,9 @@ go get -u github.com/gorilla/mux
 
 # Install godotenv
 go get -u github.com/joho/godotenv
+
+# Install testify
+go get github.com/stretchr/testify/assert
 ```
 
 ## Usage
@@ -48,11 +54,14 @@ go run main.go
 # or if you wanna run project with .exe file
 go build
 ./hcf-or-gcd
+
+# Unit Testing
+go test -v
 ```
 
 ## API
 
-#### CREATE A TEAM
+#### HCF
 ```sh
 POST : /api/hcf
 ```
