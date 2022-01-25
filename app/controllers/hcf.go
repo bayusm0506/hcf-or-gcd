@@ -13,7 +13,7 @@ func Hcf(w http.ResponseWriter, r *http.Request) {
 
 	decoder := json.NewDecoder(r.Body)
 	if err := decoder.Decode(&hcf); err != nil {
-		respondError(w, http.StatusBadRequest, err.Error())
+		respondWithError(w, http.StatusBadRequest, err.Error())
 		return
 	}
 
@@ -28,5 +28,5 @@ func Hcf(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	respondJSON(w, http.StatusCreated, result)
+	respondWithJSON(w, http.StatusCreated, map[string]int{"result": result})
 }
